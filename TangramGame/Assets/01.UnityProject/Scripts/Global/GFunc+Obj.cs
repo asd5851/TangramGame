@@ -114,4 +114,10 @@ public static partial class GFunc
         return component_;
     }       // GetComponentMust()
 
+    //! 새로운 오브젝트를 만드어서 컴포넌트를 리턴하는 함수
+    public static T CreateObj<T>(string objName) where T :Component
+    {
+        GameObject newobj = new GameObject(objName);
+        return newobj.AddComponent<T>();
+    }
 }
